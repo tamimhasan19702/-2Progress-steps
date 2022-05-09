@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:wght@100;200;300;400;500;800;900&display=swap');
+ 
+*{
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color:rgb(50, 152, 220);
+    --secondary-color: rgb(164, 164, 164);
+    --third-color: rgb(223, 221, 221);
+    --fourth-color: rgb(48, 45, 45);
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.container{
+    text-align: center;
+}
+
+.progress-container{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    position: relative;
+    width: 360px;
+    max-width: 100%;
+}
+
+.progress-container::before{
+    content: '';
+    background-color: var(--secondary-color);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    z-index: -1;
+}
+
+.progress{
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 0%;
+    z-index: -1;
+    transition: 0.4s ease;
+}
+
+.circle{
+    background-color: #fff;
+    color: var(--secondary-color);
+    border-radius: 50%;
+    border: 2px solid var(--secondary-color);
+    /* padding: 0 6px; */
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle.active{
+    border-color: var(--primary-color);
+    color: var(--fourth-color);
+}
+
+.button{
+  font-family: inherit;
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 13px;
+  margin: 0 2px;
+}
+
+.button:active{
+    transform: scale(0.95);
+}
+.button:disabled{
+    cursor:not-allowed;
+    transform: scale(1);
+    background-color: var(--secondary-color);
+}
